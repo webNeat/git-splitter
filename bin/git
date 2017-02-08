@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+$config = json_decode(file_get_contents('git-splitter.json'), true);
+
+Wn\GitSplitter\run($config, array_slice($argv, 1));
