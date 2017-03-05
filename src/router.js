@@ -1,11 +1,4 @@
-const minimist = require('minimist')
-
-const parseArgv = argv => {
-    argv = minimist(argv, { string: true, boolean: true })
-    var args = argv._
-    delete argv._
-    return { args: args, options: argv }
-}
+const args = require('./args')
 
 function Router() {
     this.index = {}
@@ -46,7 +39,7 @@ Router.prototype.otherwise = function(callback) {
 }
 
 Router.prototype.run = function(argv) {
-    argv = parseArgv(argv)
+    argv = args.parse(argv)
     return this.handle(argv.args, argv.options)
 }
 

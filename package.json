@@ -22,12 +22,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "devDependencies": {
     "mocha": "^3.2.0"
   },
   "dependencies": {
+    "dargs": "^5.1.0",
     "minimist": "^1.2.0",
     "ramda": "^0.23.0"
   }

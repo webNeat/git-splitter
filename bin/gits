@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const fs     = require('fs')
+    , run    = require('./run')
+    , config = require('./config')
+    , configPath = './git-splitter.json'
+
+if (fs.existsSync(configPath))
+    config.load(configPath)
+else
+    config.set({ splits: {} })
+
+run(process.argv.slice(2))
